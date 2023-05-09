@@ -5,6 +5,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class PastebinProject {
@@ -35,6 +37,11 @@ public class PastebinProject {
         page.Submit();
         Thread.sleep(2000);
 
+    }
+    @AfterTest
+    public void driverclose()
+    {
+        driver.close();
     }
 
 
