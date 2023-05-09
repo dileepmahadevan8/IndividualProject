@@ -3,6 +3,7 @@ package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -31,10 +32,10 @@ public class GoogleCloud {
             driver = new ChromeDriver();
             obj = new GoogleCloudFile(driver);
         }
-        else if(browser.equalsIgnoreCase("firefox"))
+        else if(browser.equalsIgnoreCase("edge"))
         {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
             obj = new GoogleCloudFile(driver);
         }
         driver.get(Url);
